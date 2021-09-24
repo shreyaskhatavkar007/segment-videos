@@ -1,0 +1,36 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#layout div {
+  margin: 10px;
+}
+
+#layout div input{
+  width: 50%;
+}
+
+#segmentVideo, #addVideoBtn, #combineVideoBtn {
+  padding: 10px;
+  background: lightpink;
+  border-style: none;
+  border-radius: 10px;
+}
+
+#combineVideo div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#combineVideo .group button {
+  padding: 2px;
+}
+
+#combineVideo .group input:first-child {
+  width: 40%;
+}

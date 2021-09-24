@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+<h2>Combine Video</h2>
+<form id="addVideo" action="/api/add-video" method="GET">
+    <div>
+        <button type="submit" id="addVideoBtn" class="add-video">Add Video</button>
+    </div>
+</form>
+<form id="combineVideo" action="/api/combine-video" method="POST">
+    {{#each elements}}
+        <div class="group">
+            <input name="url" class={{classUrl}} type="text" placeholder="Video Link" required="">
+            <input name="startDuration" class={{classStartDuration}} type="number" placeholder="Start (in seconds)" required="">
+            <input name="endDuration" class={{classEndDuration}} type="number" placeholder="End (in seconds)" required="">
+            <button type="button" class={{deleteClass}}>Delete</button>
+        </div>
+    {{/each}}
+    <div>
+        <button type="submit" id="combineVideoBtn" class="combine-video">Combine Video</button>
+    </div>
+</form>
+<div>
+    {{serverError}}
+</div>
+<div>
+{{#each videos}}
+    <video class="combined-video" width="500" height="500" controls>
+        <source class="combined-video-source" src={{video_url}} type="video/mp4">
+    </video>
+{{/each}}
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.group {
+  margin: 10px;
+}
+
+.group input{
+  width: 30%;
+}
+
+.group .commonStart, .group .commonEnd {
+  width: 10%;
+}
+
+

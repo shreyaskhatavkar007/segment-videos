@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('hbs');
+const fs = require('fs');
 
 var indexRouter = require('./routes/index');
 var splitVideosRouter = require('./routes/splitVideos');
@@ -25,6 +26,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var dir = './api/public/static';
+
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir, { recursive: true });
+}
 // app.use('/', indexRouter);
 app.use('/', splitVideosRouter);
 app.use('/', combineVideosRouter);

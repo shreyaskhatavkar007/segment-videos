@@ -22,7 +22,6 @@ router.get('/api/process-interval', function(req, res, next) {
   var directory = "api/public/static";
   fs.readdir(directory, (err, files) => {
     // if (err) throw err;
-  
     for (const file of files) {
       fs.unlink(path.join(directory, file), err => {
         // if (err) throw err;
@@ -50,6 +49,7 @@ router.post('/api/process-interval', async function(req, res, next) {
       "className": "segmented-video-source-" + initialCount
     }
   );
+
   var download = function(url, dest) {
     var file = fs.createWriteStream(dest);
     try {

@@ -13,12 +13,12 @@ var elements = [];
 var currentElementCount = 0;
 var initalCount = 0;
 var vidToJoin = [];
+
 /* GET home page. */
 router.get('/api/combine-video', function(req, res, next) {
     var directory = "api/public/static";
     fs.readdir(directory, (err, files) => {
       // if (err) throw err;
-    
       for (const file of files) {
         fs.unlink(path.join(directory, file), err => {
           // if (err) throw err;
